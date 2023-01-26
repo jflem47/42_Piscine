@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 14:34:20 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 14:34:21 by jlemieux         ###   ########.fr       */
+/*   Created: 2023/01/26 14:21:17 by jlemieux          #+#    #+#             */
+/*   Updated: 2023/01/26 14:22:23 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <string.h>
-#include <errno.h>
-
-void	ft_puterror(char *str);
-
-int	ft_open_file(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	fd;
+	unsigned int	i;
 
-	fd = open(str, O_RDONLY);
-	if (fd == -1)
-		ft_puterror(strerror(errno));
-	return (fd);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

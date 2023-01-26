@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 14:34:20 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 14:34:21 by jlemieux         ###   ########.fr       */
+/*   Created: 2023/01/26 14:21:26 by jlemieux          #+#    #+#             */
+/*   Updated: 2023/01/26 14:22:26 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <string.h>
-#include <errno.h>
-
-void	ft_puterror(char *str);
-
-int	ft_open_file(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	fd;
+	int	tmp;
 
-	fd = open(str, O_RDONLY);
-	if (fd == -1)
-		ft_puterror(strerror(errno));
-	return (fd);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

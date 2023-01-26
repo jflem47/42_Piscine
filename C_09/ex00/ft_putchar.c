@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 14:34:20 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 14:34:21 by jlemieux         ###   ########.fr       */
+/*   Created: 2023/01/26 14:21:03 by jlemieux          #+#    #+#             */
+/*   Updated: 2023/01/26 14:21:05 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <string.h>
-#include <errno.h>
 
-void	ft_puterror(char *str);
-
-int	ft_open_file(char *str)
+void	ft_putchar(char c)
 {
-	int	fd;
-
-	fd = open(str, O_RDONLY);
-	if (fd == -1)
-		ft_puterror(strerror(errno));
-	return (fd);
+	write (1, &c, 1);
 }
