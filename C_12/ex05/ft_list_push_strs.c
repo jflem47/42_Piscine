@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:49:08 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/29 14:06:41 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:26:32 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_list	*ft_list_push_strs(int size, char **strs)
 	int		i;
 
 	first = ft_create_elem(strs[0]);
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
 		ft_list_push_front(&first, strs[i]);

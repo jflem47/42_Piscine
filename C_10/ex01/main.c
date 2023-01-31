@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:33:47 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 14:33:48 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:44:47 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 #include <string.h>
 #include <errno.h>
 
-#define BUFF_SIZE 3000
+#define BUFF_SIZE 30000
 
 void	ft_putstr(char *str);
 void	ft_puterror(char *str);
 int		ft_open_file(char *str);
+void	ft_getline(void);
 
 int	main(int argc, char **argv)
 {
@@ -36,13 +37,12 @@ int	main(int argc, char **argv)
 	{
 		fd = ft_open_file(argv[i]);
 		ret = read(fd, buf, BUFF_SIZE);
-		if (ret != 0)
-			ft_puterror(strerror(errno));
-		buf[ret] = '\0';
-		ft_putstr(buf);
-		cl = close(fd);
-		if (cl != 0)
-			ft_puterror(strerror(errno));
+		if (ret != -1)
+		{
+			buf[ret] = '\0';
+			ft_putstr(buf);
+			cl = close(fd);
+		}
 		i++;
 	}
 	return (0);

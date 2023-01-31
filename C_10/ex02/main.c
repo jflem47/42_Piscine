@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:35:09 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 14:35:10 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:11:30 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,21 @@ int	main(int argc, char **argv)
 	char	buf[BUFF_SIZE + 1];
 	int		offset;
 
-	(void) argc;
+	if (argc != 4)
+		return (0);
 	offset = ft_atoi(argv[2]);
 	fd = ft_open_file(argv[3]);
+	if (fd == -1)
+		return (0);
 	ret = read(fd, buf, BUFF_SIZE);
 	if (ret == -1)
+	{
 		ft_puterror(strerror(errno));
+		return (0);
+	}
 	buf[ret] = '\0';
 	ft_putstr(ft_get_tail(buf, ret, offset));
+	ft_putstr("\n");
 	cl = close(fd);
 	if (cl != 0)
 		ft_puterror(strerror(errno));

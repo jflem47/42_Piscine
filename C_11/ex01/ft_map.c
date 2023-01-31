@@ -6,9 +6,11 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:53:00 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/28 17:07:59 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:06:08 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	*ft_map(int *tab, int length, int (*f)(int));
 
@@ -28,3 +30,41 @@ int	*ft_map(int *tab, int length, int (*f)(int))
 	}
 	return (res);
 }
+
+// int ft_addone(int a)
+// {
+// 	return (a + 1);
+// }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	int tab[10];
+// 	int i = 0;
+// 	int count = 10;
+// 	while (i < 10)
+// 	{
+// 		tab[i] = count;
+// 		i++;
+// 		count++;
+// 	}
+// 	printf("before map: ");
+// 	i = 0;
+// 	while (i < 10)
+// 	{
+// 		printf("%i ", tab[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// 	printf("after map: ");
+// 	int *tab1;
+// 	tab1 = ft_map(tab, 10, &ft_addone);
+// 	i = 0;
+// 	while (i < 10)
+// 	{
+// 		printf("%i ", tab1[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
+// 	return (0);
+// }

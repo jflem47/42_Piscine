@@ -6,31 +6,12 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:15:54 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/28 19:43:04 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:44:54 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_sort_string_tab(char **tab);
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	c;
-
-	c = 0;
-	while (s1[c] != '\0' || s2[c] != '\0')
-	{
-		if (s1[c] > s2[c])
-		{
-			return (1);
-		}
-		if (s1[c] < s2[c])
-		{
-			return (-1);
-		}
-		c++;
-	}
-	return (0);
-}
+//int	ft_strcmp(char *s1, char *s2);
 
 void	ft_sort_string_tab(char **tab)
 {
@@ -57,6 +38,26 @@ void	ft_sort_string_tab(char **tab)
 	}
 }
 
+// int	ft_strcmp(char *s1, char *s2)
+// {
+// 	int	c;
+
+// 	c = 0;
+// 	while (s1[c] != '\0' || s2[c] != '\0')
+// 	{
+// 		if (s1[c] > s2[c])
+// 		{
+// 			return (1);
+// 		}
+// 		if (s1[c] < s2[c])
+// 		{
+// 			return (-1);
+// 		}
+// 		c++;
+// 	}
+// 	return (0);
+// }
+
 // #include <unistd.h>
 // void	ft_putstr(char *str)
 // {
@@ -73,7 +74,7 @@ void	ft_sort_string_tab(char **tab)
 // int main(void)
 // {
 // 	char *strs[] = {"salut", "alain", "poli", "bebe", 
-//						"chien", "poil", "albert", "Zach", NULL};
+// 						"chien", "poil", "albert", "Zach", NULL};
 // 	ft_sort_string_tab(strs);
 
 // 	int i = 0;

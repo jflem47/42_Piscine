@@ -1,5 +1,5 @@
 NAME = ft_cat
-SRCS = main.c ft_putstr.c ft_puterror.c ft_open_file.c
+SRCS = main.c ft_putstr.c ft_puterror.c ft_open_file.c ft_getline.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
