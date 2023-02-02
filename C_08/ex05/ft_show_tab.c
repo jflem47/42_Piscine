@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:31:35 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 15:48:59 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:40:34 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_show_tab(struct s_stock_str *par)
 // {
 //     char *strs[] = {"salut", "mec", "vive", "la", "piscine yayayayaya!"};
 
-//     t_stock_str *res = ft_strs_to_tab(6, strs);
+//     t_stock_str *res = ft_strs_to_tab(5, strs);
 //     res[2].copy = "changement";
 //     ft_show_tab(res);
 //     return (0);

@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:25:43 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/21 17:13:47 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/02/01 11:45:25 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strdup(char *src)
 {
 	char	*dest;
 
-	dest = (char *) malloc(ft_strlen(src));
+	dest = (char *) malloc(ft_strlen(src) * sizeof(char));
 	ft_strcpy(dest, src);
 	return (dest);
 }

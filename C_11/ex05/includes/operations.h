@@ -6,14 +6,14 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:57:07 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/30 21:07:14 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/31 20:09:35 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 int		ft_add(int a, int b);
 int		ft_div(int a, int b);

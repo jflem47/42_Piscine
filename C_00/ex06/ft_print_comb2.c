@@ -1,61 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 14:11:26 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/02/02 17:02:10 by jlemieux         ###   ########.fr       */
+/*   Created: 2023/02/02 17:02:40 by jlemieux          #+#    #+#             */
+/*   Updated: 2023/02/02 17:28:00 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	check_last(char a, char b, char c)
-{
-	if ((a == '7' && b == '8') && c == '9')
-		return (1);
-	return (0);
-}
+void ft_print_comb2(void);
 
-void	write_n(char a, char b, char c)
+void	ft_putchar(char c)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
 	write(1, &c, 1);
 }
 
-void	ft_print_comb(void)
+void print_nbrs(int a, int b)
 {
-	int	a;
-	int	b;
-	int	c;
+	ft_putchar((a / 10) + 48);
+	ft_putchar((a % 10) + 48);
+	ft_putchar(' ');
+	ft_putchar((b / 10) + 48);
+	ft_putchar((b % 10) + 48);
+	if (!((a == 98) && (b == 99)))
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
+}
 
-	a = '0';
-	b = '1';
-	c = '2';
-	while (a <= '7')
+void ft_print_comb2(void)
+{
+	int a;
+	int b;
+	
+	a = 0;
+	b = 0;
+	while (a < 99)
 	{
 		b = a + 1;
-		while (b <= '8')
+		while (b <= 99)
 		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write_n(a, b, c);
-				if (check_last(a, b, c) != 1)
-					write(1, ", ", 2);
-				c++;
-			}
+			print_nbrs(a, b);
 			b++;
 		}
 		a++;
 	}
 }
 
-// int	main(void)
-// {
-// 	ft_print_comb();
-// 	return (0);
-// }
+int main(void)
+{
+	ft_print_comb2();
+	return (0);
+}

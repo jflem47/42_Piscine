@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:53:44 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/28 19:12:52 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:49:48 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_doop(int a, int b, int (**f)(int, int), char op)
 		ft_putnbr(f[3](a, b));
 	else if (op == '%')
 		ft_putnbr(f[4](a, b));
+	else
+		write(1, "0", 1);
 }
 
 int	main(int argc, char **argv)

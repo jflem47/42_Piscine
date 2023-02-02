@@ -6,13 +6,13 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:23:37 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 17:31:02 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/29 12:21:04 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-#define ABS(Value) (Value < 0) ? Value *= -1 : (Value)
+# define ABS(Value) (Value < 0) ? Value * -1 : (Value)
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:28:17 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/26 13:28:19 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:38:55 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,48 +27,41 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_total_len(char **strs, int strc)
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	total;
+	int		index;
+	char	*dest;
 
-	total = 0;
-	i = 0;
-	while (i < strc)
+	index = 0;
+	dest = (char *) malloc(ft_strlen(src) * sizeof(char) + 1);
+	if (!dest)
+		return (0);
+	while (src[index])
 	{
-		total += ft_strlen(strs[i]) * 2;
-		total += 4;
-		i++;
+		dest[index] = src[index];
+		index++;
 	}
-	total += 1;
-	return (total);
+	dest[index] = '\0';
+	return (dest);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	t_stock_str	*ntab;
-	t_stock_str	current;
 	int			i;
 
 	i = 0;
-	ntab = malloc(ft_total_len(av, ac));
+	ntab = malloc((ac + 1) * sizeof(t_stock_str));
 	if (ntab == NULL)
 		return (NULL);
-	while (i <= ac)
+	while (i < ac)
 	{
-		if (i != ac)
-		{
-			current.str = av[i];
-			current.copy = av[i];
-			current.size = ft_strlen(av[i]);
-			ntab[i] = current;
-			i++;
-		}
-		else
-		{
-			current.str = 0;
-			i++;
-		}
+		ntab[i].str = av[i];
+		ntab[i].copy = ft_strdup(av[i]);
+		ntab[i].size = ft_strlen(av[i]);
+		i++;
 	}
+	ntab[i].str = 0;
+	ntab[i].copy = 0;
 	return (ntab);
 }

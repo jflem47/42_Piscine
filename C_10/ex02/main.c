@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:35:09 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/30 19:11:30 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:30:45 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,39 @@
 #include <string.h>
 #include <errno.h>
 
-#define BUFF_SIZE 3000
+#define BUFF_SIZE 28000
 
 void	ft_putstr(char *str);
 void	ft_puterror(char *str);
-int		ft_open_file(char *str);
+int		ft_open_file(char *str, char *exec);
 int		ft_atoi(char *str);
 char	*ft_get_tail(char *buf, int ret, int offset);
+void	ft_getline(int offset);
 
 int	main(int argc, char **argv)
 {
 	int		fd;
 	int		ret;
-	int		cl;
 	char	buf[BUFF_SIZE + 1];
 	int		offset;
 
-	if (argc != 4)
-		return (0);
 	offset = ft_atoi(argv[2]);
-	fd = ft_open_file(argv[3]);
-	if (fd == -1)
+	if (argc == 3)
+	{
+		ft_getline(offset);
 		return (0);
+	}
+	fd = ft_open_file(argv[3], argv[0]);
+	if (fd == -1)
+		return (1);
 	ret = read(fd, buf, BUFF_SIZE);
 	if (ret == -1)
 	{
 		ft_puterror(strerror(errno));
-		return (0);
+		return (1);
 	}
 	buf[ret] = '\0';
 	ft_putstr(ft_get_tail(buf, ret, offset));
-	ft_putstr("\n");
-	cl = close(fd);
-	if (cl != 0)
-		ft_puterror(strerror(errno));
+	close(fd);
 	return (0);
 }

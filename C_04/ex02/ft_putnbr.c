@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:19:27 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/01/18 13:34:55 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/01/30 20:03:15 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	ft_putnbr(int nb)
 	ft_putnbr(nb % 10);
 }
 
-// #include <stdio.h>
-// int main(void)
-// {
-// 	ft_putnbr(42);
-// }
+#include <stdio.h>
+int main(void)
+{
+	ft_putnbr(-2147483648);
+}
